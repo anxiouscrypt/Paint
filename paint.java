@@ -13,30 +13,11 @@ public class paint extends Application {
 		launch(a);
 	}
 
+	private static final String url = "http://liveexample.pearsoncmg.com/common/sample.mp4";
+
 	@Override
 	public void start(Stage st) throws Exception {
-		String url = "http://liveexample.pearsoncmg.com/common/sample.mp4";
-
-		Media media = new Media(url);
-		MediaPlayer mediaPlayer = new MediaPlayer(media);
-		MediaView = new MediaView(mediaPlayer);
-
-		Button playbutton = new Button(">");
-
-		HBox hbox = new HBox(10);
-		hbox.getChildren.add(playbutton);
-
-		playbutton.setOnAction(e -> {
-			if (playbutton.getText().equals(">")) {
-				mediaPlayer.play();
-				playbutton.setText("||");
-			}
-			else {
-				mediaPlayer.pause();
-				playbutton.setText(">");
-			}
-		});
-
+		
 		ToggleButton drawbtn = new ToggleButton();
 		ToggleButton rectbtn = new ToggleButton();
 		ToggleButton circlebtn = new ToggleButton();
@@ -148,7 +129,6 @@ public class paint extends Application {
 		BorderPane pane = new BorderPane();
 		pane.setLeft(vbtn);
 		pane.setCenter(holder);
-		pane.setBottom(hbox)
 
 		Scene sc = new Scene(pane, 1000, 600);
 		st.setTitle("paint programer");
